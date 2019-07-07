@@ -1,9 +1,12 @@
 import React from 'react';
-import './App.css';
+
+import AddArticle from './component/addArticle'
+
 
 function App() {
   return (
-    <div className="App">
+    <div className="container bg-info text-white">
+        <AddArticle />
     </div>
   );
 }
