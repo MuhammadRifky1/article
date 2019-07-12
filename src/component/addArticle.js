@@ -1,14 +1,26 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchPosts } from '../actions';
 
 class addArticle extends Component {
-    state = {
-
+    componentDidMount(){
+        this.props.fetchPosts()
     }
     render(){
         return(
-            <h1>example</h1>
+            <div>
+                <ul>
+                {this.props.asd.map((data, i) => (
+                    <li key={i}>asd</li>
+                ))}
+                </ul>
+            </div>
         )
     }
 }
+const mapStateToProps = state => ({
+    asd: state.posts.items
+  });
 
-export default addArticle
+
+export default connect(mapStateToProps, { fetchPosts })(addArticle)

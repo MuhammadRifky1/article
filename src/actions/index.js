@@ -3,11 +3,10 @@ import {
 } from './types'
 
 
-export const fetchPosts = () => dispatch => ({
-    type: FETCH_ARTICLE,
-    payload: fetch('https://jsonplaceholder.typicode.com/posts')
+export const fetchPosts = () => dispatch => {
+    console.log("func")
+    fetch("https://jsonplaceholder.typicode.com/posts")
     .then(response => response.json())
-    .then(json => json)
-  })
-
+    .then(data => dispatch({type: FETCH_ARTICLE, payload: data}) )
+}
   
